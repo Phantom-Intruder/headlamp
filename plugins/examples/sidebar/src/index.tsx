@@ -7,14 +7,15 @@ import {
 import { SectionBox } from '@kinvolk/headlamp-plugin/lib/CommonComponents';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 // A top level item in the sidebar.
 // The sidebar link URL is: /c/mycluster/feedback
 registerSidebarEntry({
   parent: null,
-  name: 'feedback',
-  label: 'Feedback',
-  url: '/feedback',
+  name: 'argocd',
+  label: 'ArgoCD',
+  url: '/argocd',
   icon: 'mdi:comment-quote',
 });
 
@@ -22,14 +23,12 @@ registerSidebarEntry({
 // This component rendered at URL: /c/mycluster/feedback
 //    (your URL might be /c/minikube/feedback if your cluster name is minikube)
 registerRoute({
-  path: '/feedback',
-  sidebar: 'feedback',
-  name: 'feedback',
+  path: '/argocd',
+  sidebar: 'argocd',
+  name: 'argocd',
   exact: true,
   component: () => (
-    <SectionBox title="Feedback" textAlign="center" paddingTop={2}>
-      <Typography>Embed your feedback forms here</Typography>
-    </SectionBox>
+    <Redirect to="https://google.com" />
   ),
 });
 

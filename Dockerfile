@@ -71,6 +71,7 @@ COPY ./container/build-manifest.json ./container/fetch-plugins.sh /tools/
 WORKDIR /tools
 RUN mkdir -p /plugins
 RUN ./fetch-plugins.sh /plugins/
+COPY ./inc-plugins /plugins/
 
 FROM image-base as final
 
